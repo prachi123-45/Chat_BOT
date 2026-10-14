@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Customer Care Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <div class="chat-wrapper">
+
+    <div class="chat-header">
+      <div class="bot-avatar">
+        <div class="avatar-ring"></div>
+        <span class="avatar-icon">🤖</span>
+      </div>
+      <div class="header-info">
+        <h2>Customer Care AI</h2>
+        <span class="status"><span class="dot"></span>Online — Ready to help</span>
+      </div>
+      <button class="clear-btn" onclick="clearChat()" title="Clear chat">🗑️</button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="message bot-message">
+        <div class="msg-bubble">
+          👋 Hello! I'm your <strong>AI Customer Care Assistant</strong>.<br/><br/>
+          I can help you with:<br/>
+          📦 Order tracking &nbsp;|&nbsp; 💰 Refunds &nbsp;|&nbsp; ❓ FAQs
+        </div>
+        <span class="msg-time">Just now</span>
+      </div>
+
+      <div class="quick-replies" id="quickReplies">
+        <button onclick="quickSend('Track my order')">📦 Track Order</button>
+        <button onclick="quickSend('Refund policy')">💰 Refund Policy</button>
+        <button onclick="quickSend('Talk to human agent')">🧑 Human Agent</button>
+        <button onclick="quickSend('Cancel my order')">❌ Cancel Order</button>
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <input
+        type="text"
+        id="userInput"
+        placeholder="Ask me anything..."
+        onkeypress="handleKey(event)"
+        autocomplete="off"
+      />
+      <button class="send-btn" onclick="sendMessage()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
